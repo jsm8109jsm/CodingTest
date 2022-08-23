@@ -13,7 +13,8 @@ int lis(int start)
 			ret = max(ret, lis(i)+1); //Áß¿ä 
 		}
 	}
-	return ret;
+	memo[start] = ret;
+	return memo[start];
 }
 
 int main(){
