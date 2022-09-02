@@ -10,13 +10,7 @@ int main() {
 		bool isPrime = false;
 		cin>>a;
 		for(int j=a.length()-1; j>=0; j--){
-			if(isFirst && a[j] == '0'){
-				continue;
-			}
-			else{
-				isFirst = true;
-				b += a[j];
-			}
+			b += a[j];
 		}
 		num = stoi(b);
 		for(int j=2; j<num; j++){

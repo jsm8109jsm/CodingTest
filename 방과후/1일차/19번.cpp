@@ -1,20 +1,28 @@
 #include <iostream>
 using namespace std;
 int main() {
-	int n;
+	int n, arr[100],count=0;
+	bool isShort = false;
 	cin>>n;
-	int a[n], b[n];
 	for(int i=0; i<n; i++){
-		cin>>a[i];
+		cin>>arr[i];
 	}
 	for(int i=0; i<n; i++){
-		cin>>b[i];
+		isShort = false;
+		for(int j=i; j<n; j++){
+			if(arr[i]<arr[j]){
+				isShort = false;
+				break;
+			}
+			else{
+				isShort = true;
+			}
+		}
+		if(isShort){
+				cout<<arr[i]<<endl;
+			count++;
+		} 
 	}
-	for(int i=0; i<n; i++){
-		cout<<a[i]<<endl;
-	}
-	for(int i=0; i<n; i++){
-		cout<<b[i]<<endl;
-	}
+	cout<<count-1;
 	return 0;
 }
